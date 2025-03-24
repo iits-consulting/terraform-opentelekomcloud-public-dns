@@ -1,6 +1,3 @@
-data "opentelekomcloud_identity_project_v3" "current" {
-}
-
 resource "opentelekomcloud_dns_zone_v2" "public_zone" {
   name        = var.domain
   description = "Public DNS entries for ${var.domain}."
@@ -104,3 +101,4 @@ resource "opentelekomcloud_dns_recordset_v2" "caa_records" {
   records     = each.value
   tags        = var.tags
 }
+
